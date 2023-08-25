@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components"
-
+import {primary} from "../lib/colors"
 
 const Styledbutton = styled.button`
     
@@ -10,6 +10,9 @@ const Styledbutton = styled.button`
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     svg{
         height: 16px;
         margin-right: 5px;
@@ -27,10 +30,20 @@ const Styledbutton = styled.button`
     border: 1px solid #fff;
     `}
 
-    ${props => props.primary && css`
-    background-color: #5542F6;
+    ${props => props.primary && !props.outline && css`
+    background-color: ${primary};
     color:#fff;
-    border: 1px solid #5542F6;
+    border: 1px solid ${primary};
+    `}
+    ${props => props.primary && props.outline && css`
+    background-color: transparent;
+    color:${primary};
+    border: 1px solid ${primary};
+
+    &:hover{
+        background-color: ${primary};
+        color:#fff;
+    }
     `}
     ${props => props.size === 'l' && css`
     font-size: 1.2rem;
@@ -45,6 +58,13 @@ const Styledbutton = styled.button`
     padding: 5px 15px;
     svg{
         height: 16px;
+    }
+    `}
+    ${props => props.size === 's' && css`
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    svg{
+        height: 14px;
     }
     `}
     
