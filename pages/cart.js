@@ -181,6 +181,7 @@ export default function CartPage(){
                     <Input type= "text" placeholder="Street" value={street} name={street} onChange={e=>setstreet(e.target.value)}/>
                     <Input type= "text" placeholder="Apartment / Building" value={apartment} name={apartment} onChange={e=>setapartment(e.target.value)}/>
                     
+                    <input type='hidden' name='products' value={cartProducts.join(',')}/>
                     <Button black size="m" block type="submit">Continue to payment</Button>
 
                     </form>
