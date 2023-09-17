@@ -1,3 +1,4 @@
+import '../styles/globals.css'
 import {createGlobalStyle} from 'styled-components'
 import CartContextProvider from '../components/CartContext'
 const GlobalStyles = createGlobalStyle`
